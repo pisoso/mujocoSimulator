@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/main.cpp
+stdbool.h
+-
+mujoco/mujoco.h
+-
+GLFW/glfw3.h
+-
+uitools.h
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/uitools.h
+stdio.h
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/stdio.h
+stdlib.h
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/stdlib.h
+string.h
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/string.h
+
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/uitools.h
+GLFW/glfw3.h
+-
+mujoco/mujoco.h
+-
+

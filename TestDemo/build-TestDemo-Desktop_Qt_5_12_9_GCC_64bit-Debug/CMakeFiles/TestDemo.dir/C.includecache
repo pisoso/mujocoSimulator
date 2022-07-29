@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/uitools.c
+uitools.h
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/uitools.h
+stdio.h
+-
+string.h
+-
+
+/home/scu/workspace/ws_lc/code/MyRobotSimulator/TestDemo/uitools.h
+GLFW/glfw3.h
+-
+mujoco/mujoco.h
+-
+

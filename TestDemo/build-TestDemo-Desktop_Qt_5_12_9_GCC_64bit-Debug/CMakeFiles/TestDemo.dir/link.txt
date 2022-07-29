@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/TestDemo.dir/main.cpp.o CMakeFiles/TestDemo.dir/uitools.c.o  -o TestDemo -lglfw -lmujoco 

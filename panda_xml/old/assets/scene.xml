@@ -1,0 +1,48 @@
+<mujoco model="scene">
+  <compiler angle="radian" 
+  meshdir="../mesh/"
+  texturedir="../textures/">
+  </compiler>
+  <visual>
+    <quality shadowsize="8192" offsamples="8" numslices="64" numstacks="64" />
+    <headlight active="1" />
+    <rgba haze="0.15 0.25 0.35 1" />
+  </visual>
+  <option timestep="0.001" integrator="Euler" iterations="50" solver="Newton" impratio="5" noslip_iterations="5" tolerance="1e-8" cone="elliptic">
+    <flag actuation="enable" gravity="enable" warmstart="enable" />
+  </option>
+  <asset>
+
+    <mesh name="hole_mesh" file="40_2.stl" scale="0.001001 0.001001 0.001001" />
+
+    <!-- 地面材质 -->
+    <texture name="plane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512" mark="cross" markrgb=".8 .8 .8" />
+    <material name="plane" reflectance="0" texture="plane" texrepeat="1 1" texuniform="true" />
+
+    <!--skybox  -->
+    <texture builtin="gradient"  rgb1=".9 .9 1." rgb2=".6 .8 1" type="skybox" width="256" height="256"/>
+
+    <!-- plaster walls -->
+    <texture file="cream-plaster.png" type="2d" name="tex-cream-plaster"/>
+    <material name="walls_mat" reflectance="0.0" shininess="0.1" specular="0.1" texrepeat="3 3" texture="tex-cream-plaster" texuniform="true" />
+    
+    <!-- ceramic table texture and material-->
+    <texture file="ceramic.png" type="cube" name="tex-ceramic"/>
+    <material name="table_ceramic" reflectance="0.0" shininess="0.0" specular="0.2" texrepeat="1 1" texture="tex-ceramic" />
+
+  </asset>
+  
+  <worldbody>
+    <!-- Floor -->
+    <geom condim="3" material="plane" name="floor" pos="0 0 0" size="3 3 .125" type="plane"/>
+    <light diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="1 1 4.0" specular="0.3 0.3 0.3" castshadow="false"/>
+    <light diffuse=".8 .8 .8" dir="0 -.15 -1" directional="false" pos="-3. -3. 4.0" specular="0.3 0.3 0.3" castshadow="false"/>
+    <!-- front view -->
+    <camera mode="fixed" name="frontview" pos="1.6 0 1.45" quat="0.63 0.32 0.32 0.63"/>
+    <!-- bird view quat="0.7071 0 0 0.7071" -->
+    <camera mode="fixed" name="birdview" pos="-0.2 0 3.0" quat="1 0 0 0"/>
+    <!-- side view -->
+    <camera mode="fixed" name="sideview" pos="-0.05651774593317116 1.2761224129427358 1.4879572214102434" quat="0.009905065491771751 0.006877963156909582 0.5912228352893879 0.806418094001364" />
+  </worldbody>
+  
+</mujoco>
