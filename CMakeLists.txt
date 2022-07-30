@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 # 设定项目名称 并指定语言
-project(MyRobotSimulator LANGUAGES CXX)
+project(mujocoSimulator LANGUAGES CXX)
 
 set( USE_SOLUTION_FOLDERS ON )
 

@@ -89,6 +89,8 @@ Eigen::VectorXd Force_Control::cartesian_impedence_control_law(const Eigen::Vect
 
     Eigen::VectorXd tau_d = m_data->M * J_inv_b * m_M_d.inverse() * (m_K_d* ( - J_b*dq) - m_D_d*x_err - m_M_d * dJ_b * dq)
                           + (J_b.transpose() - m_data->M * J_inv_b * m_M_d.inverse()) * F_ext+m_data->nle;
+
+    std::cout << "pinocchio" <<  m_data->nle.transpose() << std::endl;
 //    Eigen::VectorXd tau_d =  J.transpose()*(-m_K_d*J*v - m_D_d*x_err);
 
     return tau_d;

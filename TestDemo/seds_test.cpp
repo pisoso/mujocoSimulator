@@ -659,12 +659,16 @@ int main(int argc, const char** argv)
             std::cout << std::endl;
 
 
+            std::cout << "mujoco" << std::endl;
             //coriolis + gravity + PD control
             for(int i=0;i<nv_mujoco;i++){
 
                 d->ctrl[i] = tau_d(i);
 //                d->ctrl[i] = d->qfrc_bias[i];
+                std::cout <<  d->qfrc_bias[i] << ",";
             }
+              std::cout <<   std::endl;
+
 
 
             num_count++;

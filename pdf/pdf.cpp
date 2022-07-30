@@ -17,11 +17,11 @@ double PDF::calculate_probability(Eigen::VectorXd _data, Eigen::VectorXd _mu, Ei
     Eigen::VectorXd data_diff;
     data_diff = _data - _mu;
 
-    Eigen::VectorXd prob_temp;
+    double prob_temp;
     prob_temp =  data_diff.transpose() *_sigma.inverse() * data_diff;
 
     double prob;
-    prob = prob_temp(0);
+    prob = prob_temp;
 
     prob =exp(-0.5 * prob) / sqrt(pow(2*M_PI,d) * abs(_sigma.determinant()));////////////////
 
